@@ -1,0 +1,107 @@
+.primary-btn {
+  background-color: #001514;
+  color: rgb(255, 255, 255);
+  padding: 10px 25px;
+  border-width: 0px;
+  border-radius: 15px;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.primary-btn:active {
+  background: #e9ebee;
+  color: #001514;
+}
+
+.primary-btn:disabled {
+  background: #454555;
+  color: white;
+  cursor: default;
+}
+
+.red-btn {
+  background-color: #6b0504;
+  color: rgb(255, 255, 255);
+  padding: 10px 25px;
+  border-width: 0px;
+  border-radius: 15px;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.red-btn:active {
+  background: #e9ebee;
+  color: #6b0504;
+}
+
+.red-btn:disabled {
+  background: #454555;
+  color: white;
+  cursor: default;
+}
+
+.green-btn {
+  background-color: rgb(0, 197, 54);
+  color: rgb(255, 255, 255);
+  padding: 10px 25px;
+  border-width: 0px;
+  border-radius: 50px;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.green-btn:active {
+  background: #e9ebee;
+  color: #23232b;
+}
+
+.green-btn:disabled {
+  background: #454555;
+  color: white;
+  cursor: default;
+}
+
+.dark-btn {
+  background-color: rgb(15, 15, 15);
+  color: rgb(170, 170, 188);
+  padding: 10px 25px;
+  border-width: 0px;
+  border-radius: 50px;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.dark-btn:active {
+  background: #e9ebee;
+  color: #23232b;
+}
+
+.dark-btn:disabled {
+  background: rgb(15, 15, 15);
+  color: rgb(170, 170, 188);
+  cursor: default;
+}

@@ -55,9 +55,11 @@ app.whenReady()
 
 // first param is event: _
 // if you don't use the value here, you can underscore it
-ipcMain.on('notify', (_, value) => {
-    new Notification({ title: 'Hello world', body: value }).show()
-})
+// ipcMain.handle('notify', (_, value) => {
+//     new Notification({ title: 'Hello world', body: value }).show()
+// })
+// boot the server
+require('./server/boot')
 
 // callback method for main process
 app.on('window-all-closed', () => {

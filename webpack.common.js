@@ -19,7 +19,31 @@ module.exports = {
                   esmodules: true
                 }
               }],
-              '@babel/preset-react']
+              '@babel/preset-react'],
+            plugins: [
+              "@babel/plugin-syntax-dynamic-import",
+              "@babel/plugin-proposal-class-properties"
+            ]
+          }
+        }
+      },
+      {
+        test: /\.jsx$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [[
+              '@babel/preset-env', {
+                targets: {
+                  esmodules: true
+                }
+              }],
+              '@babel/preset-react'],
+            plugins: [
+              "@babel/plugin-syntax-dynamic-import",
+              "@babel/plugin-proposal-class-properties"
+            ]
           }
         }
       },
@@ -33,12 +57,25 @@ module.exports = {
           // Compiles Sass to CSS
           'sass-loader',
         ],
-      }
+      },
+      {
+        test: /\.(gif|png|jpg|svg)(\?.*$|$)/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+              name: '[name].[ext]',
+              publicPath: 'images/'
+            },
+          },
+        ],
+      },
     ]
   },
   plugins: [],
   resolve: {
-    extensions: ['.js'],
+    extensions: ['.js', '.jsx'],
   },
   output: {
     filename: 'app.js',

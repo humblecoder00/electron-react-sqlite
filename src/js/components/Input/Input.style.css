@@ -1,0 +1,32 @@
+.white-input {
+  outline: none;
+  background: rgb(255, 255, 255);
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-radius: 15px;
+  min-height: 30px;
+  min-width: 200px;
+  padding: 10px 15px;
+  line-height: 1;
+  color: rgb(69, 69, 85);
+  font-size: 20px;
+  font-weight: 400;
+  border-bottom: 0px solid rgb(170, 170, 188);
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 3px;
+}
+
+.grey-input {
+  text-align: left;
+  font-size: 18px;
+  padding: 10px 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background: rgb(244, 244, 244);
+  border-radius: 15px;
+  outline: none;
+  border: none;
+  width: 100%;
+  color: rgb(35, 35, 43);
+}
