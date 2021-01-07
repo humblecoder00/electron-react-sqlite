@@ -42,6 +42,7 @@ if (isDev) {
 app.whenReady()
     .then(() => {
         createWindow();
+        console.log('create the window')
         if (isDev) {
             installExtension(REACT_DEVELOPER_TOOLS)
               .then(name => console.log(`Added Extension:  ${name}`))
@@ -51,7 +52,10 @@ app.whenReady()
               .then(name => console.log(`Added Extension:  ${name}`))
               .catch(error => console.log(`An error occurred: , ${error}`));
           }
-    })
+
+        //   require('./server/boot')
+        })
+
 
 // first param is event: _
 // if you don't use the value here, you can underscore it
@@ -59,7 +63,11 @@ app.whenReady()
 //     new Notification({ title: 'Hello world', body: value }).show()
 // })
 // boot the server
-require('./server/boot')
+// require('./server/boot')
+// ipcMain.handle('notify', (_, value) => {
+//     new Notification({ title: 'Hello world', body: value }).show()
+// })
+// const result = await ipcRenderer.invoke('get-todos')
 
 // callback method for main process
 app.on('window-all-closed', () => {

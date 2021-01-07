@@ -12,7 +12,7 @@ import {
     deleteTodos,
 } from '../features/feature-todo/services/todo.service'
 
-// import { openExport } from '../../services'
+// import { openExport } from '../services'
 
 import TodoPageUI from './components/TodoPageUI'
 import DataOptionsTab from '../components/DataOptionsTab'
@@ -63,7 +63,7 @@ class Home extends Component {
     handleExport = () => {
         console.log('export the data now')
         // pass the output name of json file to export function:
-        openExport('todos')
+        // openExport('todos')
     }
 
     render() {

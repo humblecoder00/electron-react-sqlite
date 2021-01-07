@@ -5,15 +5,70 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "watch": "webpack --config webpack.common.js --watch"
+    "watch": "webpack --config webpack.common.js --watch",
+    "build": "webpack --config webpack.prod.js",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps",
+    "make:linux": "electron-builder --linux",
+    "make:macos": "electron-builder --mac",
+    "make:win": "electron-builder --win --x64"
   },
   "author": "Şahin Arslan",
   "license": "ISC",
+  "build": {
+    "productName": "Simple todo app",
+    "appId": "com.arslan.simpletodo",
+    "files": [
+      "build/**/*",
+      "assets/**/*",
+      "index.html",
+      "main.js",
+      "preload.js",
+      "server/**/*"
+    ],
+    "mac": {
+      "category": "public.app-category.developer-tools",
+      "icon": "assets/images/react_app_logo.png",
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 810,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "win": {
+      "icon": "assets/images/react_app_logo.png",
+      "target": [
+        "nsis"
+      ]
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "rpm",
+        "AppImage"
+      ],
+      "category": "Development"
+    }
+  },
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "electron": "^8.5.0",
+    "electron-builder": "^22.9.1",
     "electron-reload": "^1.5.0",
-    "url-loader": "^4.1.1"
+    "url-loader": "^4.1.1",
+    "webpack-merge": "^5.7.3"
   },
   "dependencies": {
     "@babel/preset-env": "^7.12.11",
@@ -23,6 +78,7 @@
     "babel-runtime": "^6.26.0",
     "css-loader": "^5.0.1",
     "electron-devtools-installer": "^3.1.1",
+    "electron-is-dev": "^1.2.0",
     "node-env-file": "^0.1.8",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
