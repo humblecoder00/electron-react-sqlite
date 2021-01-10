@@ -1,5 +1,5 @@
 // Main process
-const { app, BrowserWindow, Notification, ipcMain } = require('electron')
+const { app, BrowserWindow } = require('electron')
 const path = require('path')
 const isDev = !app.isPackaged // check if in dev or prod env
 
@@ -12,17 +12,21 @@ function createWindow() {
         width: 1200,
         height: 800,
         webPreferences: {
+            // as a best practice + safety, nodeIntegration should be false
+            // this keeps the renderer thread having direct access to Node
             nodeIntegration: false,
             // will sanitize JS code to be safe
             worldSafeExecuteJavascript: true,
             // is a feature that ensures that both your
             // preload scripts and Electron's internal logic tunes in seperate context:
             contextIsolation: true,
+            // preload script exposes the parts needed for renderer from main thread:
             preload: path.join(__dirname, 'preload.js')
         },
     })
 
     win.loadFile('index.html')
+    // if in development, trigger inspect view on boot
     isDev && win.webContents.openDevTools()
 }
 
@@ -41,8 +45,14 @@ if (isDev) {
 // when app is ready, create the window
 app.whenReady()
     .then(() => {
+        // IMPORTANT! Initialize server before creating window
+        // Otherwise your IPC handlers won't be recognized on production version
+        require('./server/boot')
+
+        // Create the window:
         createWindow();
-        console.log('create the window')
+
+        // Initialize React & Redux devtools for dev environment
         if (isDev) {
             installExtension(REACT_DEVELOPER_TOOLS)
               .then(name => console.log(`Added Extension:  ${name}`))
@@ -52,22 +62,7 @@ app.whenReady()
               .then(name => console.log(`Added Extension:  ${name}`))
               .catch(error => console.log(`An error occurred: , ${error}`));
           }
-
-        //   require('./server/boot')
         })
-
-
-// first param is event: _
-// if you don't use the value here, you can underscore it
-// ipcMain.handle('notify', (_, value) => {
-//     new Notification({ title: 'Hello world', body: value }).show()
-// })
-// boot the server
-// require('./server/boot')
-// ipcMain.handle('notify', (_, value) => {
-//     new Notification({ title: 'Hello world', body: value }).show()
-// })
-// const result = await ipcRenderer.invoke('get-todos')
 
 // callback method for main process
 app.on('window-all-closed', () => {
@@ -79,5 +74,3 @@ app.on('window-all-closed', () => {
 
 // Webpack -> is a module builder, main purpose is to bundle JS files for usage in the browser.
 // Babel -> is a JS compiler
-
-console.log('hi world')
