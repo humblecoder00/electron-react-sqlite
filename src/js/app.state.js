@@ -7,8 +7,6 @@ const reducers = {
 
 const features = [
     require('./features/feature-todo'),
-    // require('features/feature-storage'),
-    // require('features/feature-network'),
 ]
 
 // export const createState = createSSRState(reducers, features)
