@@ -17,10 +17,6 @@
  *
  * Trust me, I fucked this up so many times that I know by direct experience
  * that this is the less-fucked-up way to handle your app's generic informations.
- *
- * NOTE:
- * To learn more about the structure of this file refer to the documentation:
- * https://marcopeg.com/react-ssr/articles/reducers.html
  */
 
 // export const initialState = {

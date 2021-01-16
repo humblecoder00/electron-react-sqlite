@@ -72,5 +72,3 @@ app.on('window-all-closed', () => {
     }
 })
 
-// Webpack -> is a module builder, main purpose is to bundle JS files for usage in the browser.
-// Babel -> is a JS compiler

@@ -1,7 +1,8 @@
+/* Container file */
+
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-// import path from 'path'
 
 import {
     getTodos,
@@ -10,12 +11,11 @@ import {
     updateTodo,
     deleteTodo,
     deleteTodos,
-} from '../features/feature-todo/services/todo.service'
+} from '../../features/feature-todo/services/todo.service'
 
-// import { openExport } from '../services'
 
 import TodoPageUI from './components/TodoPageUI'
-import DataOptionsTab from '../components/DataOptionsTab'
+// import DataOptionsTab from '../../../components/DataOptionsTab'
 
 const mapState = ({ todos }) => ({
     list: todos.list,
@@ -53,18 +53,12 @@ class Home extends Component {
         testing: null,
     }
 
-    tryResponder = async () => {
-        // const res = await this.props.deleteTodos()
-        // console.log('response??????', res)
-        // this.setState({ testing: res })
-        await this.props.deleteTodos()
-    }
+    // tryResponder = async () => {
+    //     await this.props.deleteTodos()
+    // }
 
-    handleExport = () => {
-        console.log('export the data now')
-        // pass the output name of json file to export function:
-        // openExport('todos')
-    }
+    // handleExport = () => {
+    // }
 
     render() {
         const {
@@ -75,17 +69,14 @@ class Home extends Component {
             deleteTodo,
         } = this.props
 
-        // console.log('path?', path)
-
         return (
             <div style={{ padding: 15 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
                     <h2>Todo list</h2>
-                    {/* <p>{path.join(process.resourcesPath, 'db.sqlite')}</p> */}
-                    <DataOptionsTab
+                    {/* <DataOptionsTab
                         onExport={this.handleExport}
                         onImport={this.tryResponder}
-                    />
+                    /> */}
                 </div>
                 {(this.state.testing) ? <p>{this.state.testing}</p> : null}
                 <TodoPageUI

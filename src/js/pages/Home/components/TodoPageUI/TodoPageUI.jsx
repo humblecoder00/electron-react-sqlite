@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import TodoListUI from '../TodoListUI'
-import AddTodo from '../../../components/AddTodo'
-import UpdateTodo from '../../../components/UpdateTodo'
-import Modal from '../../../components/Modal'
+import AddTodo from 'components/AddTodo'
+import UpdateTodo from 'components/UpdateTodo'
+import Modal from 'components/Modal'
 
 import getStyles from './TodoPageUI.style'
 const styles = getStyles()
