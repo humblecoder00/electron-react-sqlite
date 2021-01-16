@@ -5,7 +5,6 @@ const { ipcMain } = require('electron')
 // recieve ipc channel names & initialize them
 const start = async (settings = {}) => {
     const { routes } = settings
-    console.log('did I recieve the ipcMethod?')
     // start event listeners for each route
     routes.forEach(route => (
         ipcMain.handle(`${route.name}`, async (event, arg) => {

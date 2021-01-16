@@ -31,9 +31,9 @@
 
 - Run `npm run build` to prepare the app for production.
 - Then run the command corresponding to your OS:
-  Windows: `npm run make:win`
-  Linux: `npm run make:linux`
-  macOS: `npm run make:macos`
+- Windows: `npm run make:win`
+- Linux: `npm run make:linux`
+- macOS: `npm run make:macos`
 
 ## Commands:
 

@@ -3,7 +3,6 @@ const Sequelize = require('sequelize')
 
 const init = async (settings) => {
     const name = settings.connectionName || 'default'
-    console.log('settings here?', settings)
     // connect to db here
     const handler = new Sequelize(settings.database, settings.username, settings.password, {
         dialect: 'sqlite',
