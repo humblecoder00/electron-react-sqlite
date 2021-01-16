@@ -77,13 +77,17 @@ module.exports = {
       },
     ]
   },
-  plugins: [
-    // new webpack.DefinePlugin({
-    //     'process.env.NODE_ENV': JSON.stringify('development')
-    // })
-  ],
+  plugins: [],
   resolve: {
     extensions: ['.js', '.jsx'],
+    alias: {
+      // Front-end aliases:
+      components: path.resolve(__dirname, 'src/js/components'),
+      features: path.resolve(__dirname, 'src/js/features'),
+      lib: path.resolve(__dirname, 'src/js/lib'),
+      resources: path.resolve(__dirname, 'src/js/resources'),
+      pages: path.resolve(__dirname, 'src/js/pages'),
+    }
   },
   output: {
     filename: 'app.js',

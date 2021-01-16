@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import editIcon from '../../../../resources/editIcon.svg'
+import editIcon from 'resources/editIcon.svg'
 
 import getStyles from './TodoItem.style'
 const styles = getStyles()

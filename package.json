@@ -16,6 +16,13 @@
     "make:macos": "electron-builder --mac",
     "make:win": "electron-builder --win --x64"
   },
+  "keywords": [
+    "Electron",
+    "React",
+    "Redux",
+    "Sequelize",
+    "SQLite"
+  ],
   "author": "Şahin Arslan",
   "license": "ISC",
   "build": {
