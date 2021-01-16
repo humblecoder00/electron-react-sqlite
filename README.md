@@ -73,6 +73,7 @@ Packs the app for macOS environment.
 ## Project structure
 
 ```bash
+├── assets # contains app icon files
 ├── server # contains back-end related code: IPC handler, Sequelize, SQLite
 │   ├── features             # contains back-end business logic per functionality (routes)
 │   ├── lib                  # contains utility functions used in back-end
